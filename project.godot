@@ -16,7 +16,14 @@ _global_script_class_icons={
 [application]
 
 config/name="MoveableBreakout"
+run/main_scene="res://Scenes/1.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=630
+window/size/height=420
+window/size/resizable=false
 
 [rendering]
 
