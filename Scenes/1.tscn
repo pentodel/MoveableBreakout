@@ -93,5 +93,5 @@ position = Vector2( 315, 180 )
 [node name="Brick 19" parent="Bricks" instance=ExtResource( 2 )]
 position = Vector2( 420, 180 )
 
-[node name="Brick 20" parent="Bricks" instance=ExtResource( 2 )]
+[node name="Brick 23" parent="Bricks" instance=ExtResource( 2 )]
 position = Vector2( 525, 180 )
