@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-const minspeed = 50
+const minspeed = 100
 const maxspeed = 300
 
 # Called when the node enters the scene tree for the first time.
@@ -10,13 +10,18 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if (get_linear_velocity().length() < minspeed):
+		set_linear_velocity(get_position().normalized() * get_linear_velocity().length() * minspeed)
+	if (get_linear_velocity().length() > maxspeed):
+		set_linear_velocity(get_position().normalized() * maxspeed)
 	var bodies = get_colliding_bodies()
 	for body in bodies:
-		if(body.is_in_group("Bricks")):
+		if (body.is_in_group("Bricks")):
 			body.queue_free()
-		if(body.get_name() == "Paddle"):
-			var speed = linear_velocity.length()
+		if (body.get_name() == "Paddle"):
+			var speed = get_linear_velocity().length()
 			var direction = get_position() - body.get_node("Point").get_global_position()
 			var velocity = direction.normalized()*min(speed*minspeed, maxspeed)
 			set_linear_velocity(velocity)
-			
+	if (get_position().y > get_viewport_rect().end.y):
+		queue_free()
