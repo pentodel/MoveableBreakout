@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const ball_scene = preload("res://SceneObjects/Ball.tscn")
+const ball_scene = preload("res://SceneObjects/COVID.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
