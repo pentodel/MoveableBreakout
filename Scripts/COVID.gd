@@ -14,7 +14,7 @@ func _process(delta):
 	for body in bodies:
 		if (body.is_in_group("Bricks")):
 			body.queue_free()
-		if (body.get_name() == "Paddle"):
+		if (body.get_name() == "CVPaddle"):
 			var speed = get_linear_velocity().length()
 			var direction = get_position() - body.get_node("Point").get_global_position()
 			var velocity = direction.normalized()*min(speed*minspeed, maxspeed)
