@@ -21,3 +21,7 @@ func _process(delta):
 			set_linear_velocity(velocity)
 	if (get_position().y > get_viewport_rect().end.y):
 		queue_free()
+
+
+func _on_Ball_body_entered(body):
+	$hit.play()

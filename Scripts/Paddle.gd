@@ -20,3 +20,5 @@ func _input(event):
 			var ball = ball_scene.instance()
 			ball.set_position(get_position() - Vector2(0,10))
 			get_tree().get_root().add_child(ball)
+
+
