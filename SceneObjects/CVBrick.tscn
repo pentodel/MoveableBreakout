@@ -7,11 +7,12 @@ extents = Vector2( 22.3964, 15 )
 "Bricks",
 ]]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Red" type="ColorRect" parent="."]
 margin_right = 45.0
 margin_bottom = 30.0
-color = Color( 1, 0.231373, 0.231373, 1 )
+color = Color( 1, 0.14902, 0.14902, 1 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 

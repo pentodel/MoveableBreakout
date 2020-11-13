@@ -14,7 +14,7 @@ func _process(delta):
 	set_position(Vector2(x,y))
 
 func _input(event):
-	if event is InputEventMouseButton && event.is_pressed():
+	if (event is InputEventMouseButton && event.is_pressed()) || (event is InputEventKey && event.scancode == KEY_SPACE):
 		var all_balls = get_tree().get_nodes_in_group("Balls")
 		if len(all_balls) < 1:
 			var ball = ball_scene.instance()

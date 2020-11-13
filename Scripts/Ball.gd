@@ -1,7 +1,7 @@
 extends RigidBody2D
 
-const minspeed = 100
-const maxspeed = 400
+const minspeed = 200
+const maxspeed = 500
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,6 +14,7 @@ func _process(delta):
 	for body in bodies:
 		if (body.is_in_group("Bricks")):
 			body.queue_free()
+			get_node("/root/World").score += 1
 		if (body.get_name() == "Paddle"):
 			var speed = get_linear_velocity().length()
 			var direction = get_position() - body.get_node("Point").get_global_position()

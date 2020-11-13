@@ -15,7 +15,7 @@ bounce = 1.0
 ]]
 input_pickable = true
 physics_material_override = SubResource( 1 )
-gravity_scale = 0.0
+gravity_scale = 0.01
 contacts_reported = 1
 contact_monitor = true
 linear_velocity = Vector2( 0, -200 )
