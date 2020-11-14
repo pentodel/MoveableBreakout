@@ -16,20 +16,26 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.207843, 0.0431373, 0.0431373, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label" type="Label" parent="."]
+[node name="Title" type="Label" parent="."]
 margin_left = 300.0
-margin_top = 45.0
+margin_top = 75.0
 margin_right = 623.0
-margin_bottom = 131.0
+margin_bottom = 161.0
 custom_fonts/font = ExtResource( 1 )
 text = "COVID Crusher"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PlayClassic" type="Button" parent="."]
 margin_left = 360.0
-margin_top = 150.0
+margin_top = 180.0
 margin_right = 570.0
-margin_bottom = 240.0
+margin_bottom = 270.0
 custom_fonts/font = ExtResource( 2 )
 text = "Play Classic"
 script = ExtResource( 3 )
@@ -39,12 +45,26 @@ __meta__ = {
 
 [node name="PlayNew" type="Button" parent="."]
 margin_left = 360.0
-margin_top = 255.0
+margin_top = 285.0
 margin_right = 570.0
-margin_bottom = 345.0
+margin_bottom = 375.0
 custom_fonts/font = ExtResource( 2 )
 text = "Play New"
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 15.0
+margin_top = 555.0
+margin_right = 281.0
+margin_bottom = 620.0
+custom_colors/font_color = Color( 0.968627, 0.462745, 0.462745, 1 )
+text = "How to play:
+Click or Spacebar to create a new ball.
+Paddle follows the position of the mouse.
+Press Q to clear the ball if necessary."
 __meta__ = {
 "_edit_use_anchors_": false
 }

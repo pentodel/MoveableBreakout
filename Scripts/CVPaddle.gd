@@ -20,3 +20,7 @@ func _input(event):
 			var ball = ball_scene.instance()
 			ball.set_position(get_position() - Vector2(0,10))
 			get_tree().get_root().add_child(ball)
+	if (event is InputEventKey && event.scancode == KEY_Q):
+		var all_balls = get_tree().get_nodes_in_group("Balls")
+		for ball in all_balls:
+			ball.queue_free()
