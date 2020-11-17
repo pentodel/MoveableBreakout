@@ -1,0 +1,203 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Fonts/Misproject.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/PlayCountry/PlayChina.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/MisprojectSmall.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scripts/PlayCountry/PlayNewYork.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/PlayCountry/PlayIran.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/PlayCountry/PlayUS.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/PlayCountry/PlayMichigan.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/PlayCountry/PlayFrance.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/PlayCountry/PlayIllinois.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/PlayCountry/PlayCalifornia.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/PlayCountry/PlayItaly.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/PlayCountry/PlayFlorida.gd" type="Script" id=12]
+[ext_resource path="res://Scripts/LevelSelect.gd" type="Script" id=13]
+[ext_resource path="res://SceneObjects/Inactive.tscn" type="PackedScene" id=14]
+
+[node name="LevelSelect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.207843, 0.0431373, 0.0431373, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.038
+anchor_right = 0.5
+anchor_bottom = 0.038
+margin_left = -176.5
+margin_top = 6.06
+margin_right = 176.5
+margin_bottom = 92.06
+custom_fonts/font = ExtResource( 1 )
+text = "Select A Level"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_top = 144.0
+margin_bottom = 144.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="China" type="Button" parent="Control"]
+margin_left = -262.5
+margin_right = -87.5
+margin_bottom = 75.0
+custom_fonts/font = ExtResource( 3 )
+text = "1. China"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewYork" type="Button" parent="Control"]
+margin_left = -262.5
+margin_top = 90.0
+margin_right = -87.5
+margin_bottom = 165.0
+custom_fonts/font = ExtResource( 3 )
+text = "2. New York"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="inactiveny" parent="Control/NewYork" instance=ExtResource( 14 )]
+
+[node name="Iran" type="Button" parent="Control"]
+margin_left = -262.5
+margin_top = 180.0
+margin_right = -87.5
+margin_bottom = 255.0
+custom_fonts/font = ExtResource( 3 )
+text = "3. Iran"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="inactiveir" parent="Control/Iran" instance=ExtResource( 14 )]
+
+[node name="Michigan" type="Button" parent="Control"]
+margin_left = -262.5
+margin_top = 270.0
+margin_right = -87.5001
+margin_bottom = 345.0
+custom_fonts/font = ExtResource( 3 )
+text = "4. Michigan"
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="inactivemi" parent="Control/Michigan" instance=ExtResource( 14 )]
+
+[node name="Italy" type="Button" parent="Control"]
+margin_left = -262.5
+margin_top = 360.0
+margin_right = -87.5
+margin_bottom = 435.0
+custom_fonts/font = ExtResource( 3 )
+text = "5. Italy"
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="inactiveit" parent="Control/Italy" instance=ExtResource( 14 )]
+
+[node name="Illinois" type="Button" parent="Control"]
+margin_left = 87.5
+margin_right = 262.5
+margin_bottom = 75.0
+custom_fonts/font = ExtResource( 3 )
+text = "6. Illinois"
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="inactiveil" parent="Control/Illinois" instance=ExtResource( 14 )]
+
+[node name="France" type="Button" parent="Control"]
+margin_left = 87.5
+margin_top = 90.0
+margin_right = 262.5
+margin_bottom = 165.0
+custom_fonts/font = ExtResource( 3 )
+text = "7, France"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="inactivefr" parent="Control/France" instance=ExtResource( 14 )]
+
+[node name="Florida" type="Button" parent="Control"]
+margin_left = 87.5
+margin_top = 180.0
+margin_right = 262.5
+margin_bottom = 255.0
+custom_fonts/font = ExtResource( 3 )
+text = "8, Florida"
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="inactivefl" parent="Control/Florida" instance=ExtResource( 14 )]
+
+[node name="California" type="Button" parent="Control"]
+margin_left = 87.5
+margin_top = 270.0
+margin_right = 262.5
+margin_bottom = 345.0
+custom_fonts/font = ExtResource( 3 )
+text = "9, California"
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="inactiveca" parent="Control/California" instance=ExtResource( 14 )]
+
+[node name="US" type="Button" parent="Control"]
+margin_left = 87.5
+margin_top = 360.0
+margin_right = 262.5
+margin_bottom = 435.0
+custom_fonts/font = ExtResource( 3 )
+text = "10. US"
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="inactiveus" parent="Control/US" instance=ExtResource( 14 )]
+[connection signal="pressed" from="Control/China" to="Control/China" method="_on_China_pressed"]
+[connection signal="pressed" from="Control/NewYork" to="Control/China" method="_on_New_York_pressed"]
+[connection signal="pressed" from="Control/NewYork" to="Control/NewYork" method="_on_New_York_pressed"]
+[connection signal="pressed" from="Control/Iran" to="Control/Iran" method="_on_Iran_pressed"]
+[connection signal="pressed" from="Control/Michigan" to="Control/Michigan" method="_on_Michigan_pressed"]
+[connection signal="pressed" from="Control/Italy" to="Control/Italy" method="_on_Italy_pressed"]
+[connection signal="pressed" from="Control/Illinois" to="Control/Illinois" method="_on_Illinois_pressed"]
+[connection signal="pressed" from="Control/France" to="Control/France" method="_on_France_pressed"]
+[connection signal="pressed" from="Control/Florida" to="Control/Florida" method="_on_Florida_pressed"]
+[connection signal="pressed" from="Control/California" to="Control/California" method="_on_California_pressed"]
+[connection signal="pressed" from="Control/US" to="Control/US" method="_on_US_pressed"]

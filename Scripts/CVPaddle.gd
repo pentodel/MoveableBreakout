@@ -19,7 +19,7 @@ func _input(event):
 		if len(all_balls) < 1:
 			var ball = ball_scene.instance()
 			ball.set_position(get_position() - Vector2(0,10))
-			get_tree().get_root().add_child(ball)
+			get_tree().root.get_child(0).add_child(ball)
 	if (event is InputEventKey && event.scancode == KEY_Q):
 		var all_balls = get_tree().get_nodes_in_group("Balls")
 		for ball in all_balls:

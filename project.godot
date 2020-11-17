@@ -19,6 +19,10 @@ config/name="MoveableBreakout"
 run/main_scene="res://Scenes/Menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GlobalData="*res://Scripts/GlobalData.gd"
+
 [display]
 
 window/size/width=945
