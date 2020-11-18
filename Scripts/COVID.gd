@@ -27,6 +27,3 @@ func _process(delta):
 	if (get_position().y > get_viewport_rect().end.y) || (get_position().y < get_viewport_rect().position.y) || (get_position().x > get_viewport_rect().end.x) || (get_position().x < get_viewport_rect().position.y):
 		queue_free()
 
-
-#func _on_COVID_body_entered(body):
-#	$sneeze.play()
