@@ -1,0 +1,179 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Fonts/Misproject.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Fonts/MisprojectSmall.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scripts/CountryButtons/ChinaButton.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/CountryButtons/NewYorkButton.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/CountryButtons/IranButton.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/CountryButtons/MichiganButton.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/CountryButtons/ItalyButton.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/CountryButtons/FloridaButton.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/CountryButtons/SwedenButton.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/CountryButtons/IllinoisButton.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/CountryButtons/CaliforniaButton.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/CountryButtons/USAButton.gd" type="Script" id=12]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.207843, 0.0431373, 0.0431373, 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -171.0
+margin_top = 21.0
+margin_right = 171.0
+margin_bottom = 107.0
+custom_fonts/font = ExtResource( 1 )
+text = "Select A Level"
+
+[node name="Buttons" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="China" type="Button" parent="Buttons"]
+margin_left = -277.5
+margin_top = -125.0
+margin_right = -102.5
+margin_bottom = -50.0
+custom_fonts/font = ExtResource( 2 )
+text = "China"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="New York" type="Button" parent="Buttons"]
+margin_left = -280.0
+margin_top = -36.0
+margin_right = -105.0
+margin_bottom = 39.0
+custom_fonts/font = ExtResource( 2 )
+text = "New York"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Iran" type="Button" parent="Buttons"]
+margin_left = -280.0
+margin_top = 54.0
+margin_right = -105.0
+margin_bottom = 129.0
+custom_fonts/font = ExtResource( 2 )
+text = "Iran"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Michigan" type="Button" parent="Buttons"]
+margin_left = -280.0
+margin_top = 144.0
+margin_right = -105.0
+margin_bottom = 219.0
+custom_fonts/font = ExtResource( 2 )
+text = "Michigan"
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Italy" type="Button" parent="Buttons"]
+margin_left = -280.0
+margin_top = 234.0
+margin_right = -105.0
+margin_bottom = 309.0
+custom_fonts/font = ExtResource( 2 )
+text = "Italy"
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Florida" type="Button" parent="Buttons"]
+margin_left = 105.0
+margin_top = -126.0
+margin_right = 280.0
+margin_bottom = -51.0
+custom_fonts/font = ExtResource( 2 )
+text = "Florida"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sweden" type="Button" parent="Buttons"]
+margin_left = 105.0
+margin_top = -36.0
+margin_right = 280.0
+margin_bottom = 39.0
+custom_fonts/font = ExtResource( 2 )
+text = "Sweden"
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Illinois" type="Button" parent="Buttons"]
+margin_left = 105.0
+margin_top = 54.0
+margin_right = 280.0
+margin_bottom = 129.0
+custom_fonts/font = ExtResource( 2 )
+text = "Illinois"
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="California" type="Button" parent="Buttons"]
+margin_left = 105.0
+margin_top = 144.0
+margin_right = 280.0
+margin_bottom = 219.0
+custom_fonts/font = ExtResource( 2 )
+text = "California"
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="USA" type="Button" parent="Buttons"]
+margin_left = 105.0
+margin_top = 234.0
+margin_right = 280.0
+margin_bottom = 309.0
+custom_fonts/font = ExtResource( 2 )
+text = "USA"
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Buttons/China" to="Buttons/China" method="_on_China_pressed"]
+[connection signal="pressed" from="Buttons/New York" to="Buttons/New York" method="_on_New_York_pressed"]
+[connection signal="pressed" from="Buttons/Iran" to="Buttons/Iran" method="_on_Iran_pressed"]
+[connection signal="pressed" from="Buttons/Michigan" to="Buttons/Michigan" method="_on_Michigan_pressed"]
+[connection signal="pressed" from="Buttons/Italy" to="Buttons/Italy" method="_on_Italy_pressed"]
+[connection signal="pressed" from="Buttons/Florida" to="Buttons/Florida" method="_on_Florida_pressed"]
+[connection signal="pressed" from="Buttons/Sweden" to="Buttons/Sweden" method="_on_Sweden_pressed"]
+[connection signal="pressed" from="Buttons/Illinois" to="Buttons/Illinois" method="_on_Illinois_pressed"]
+[connection signal="pressed" from="Buttons/California" to="Buttons/California" method="_on_California_pressed"]
+[connection signal="pressed" from="Buttons/USA" to="Buttons/USA" method="_on_USA_pressed"]

@@ -56,15 +56,16 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 15.0
-margin_top = 555.0
+margin_left = 10.0
+margin_top = 540.0
 margin_right = 281.0
-margin_bottom = 620.0
+margin_bottom = 622.0
 custom_colors/font_color = Color( 0.968627, 0.462745, 0.462745, 1 )
 text = "How to play:
 Click or Spacebar to create a new ball.
 Paddle follows the position of the mouse.
-Press Q to clear the ball if necessary."
+Press Q to clear the ball if necessary.
+Press ESC to return to the Main Menu"
 __meta__ = {
 "_edit_use_anchors_": false
 }
