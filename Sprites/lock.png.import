@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bluebrick.png-451581a9cd079f1ed3b83a4a464beb11.stex"
+path="res://.import/lock.png-6fac9349cb5291238717611ff46947de.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/bluebrick.png"
-dest_files=[ "res://.import/bluebrick.png-451581a9cd079f1ed3b83a4a464beb11.stex" ]
+source_file="res://Sprites/lock.png"
+dest_files=[ "res://.import/lock.png-6fac9349cb5291238717611ff46947de.stex" ]
 
 [params]
 

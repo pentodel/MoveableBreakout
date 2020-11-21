@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Fonts/Misproject.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Fonts/MisprojectSmall.tres" type="DynamicFont" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Scripts/CountryButtons/IllinoisButton.gd" type="Script" id=10]
 [ext_resource path="res://Scripts/CountryButtons/CaliforniaButton.gd" type="Script" id=11]
 [ext_resource path="res://Scripts/CountryButtons/USAButton.gd" type="Script" id=12]
+[ext_resource path="res://SceneObjects/InactiveCover.tscn" type="PackedScene" id=13]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -72,6 +73,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="InactiveCover" parent="Buttons/New York" instance=ExtResource( 13 )]
+
 [node name="Iran" type="Button" parent="Buttons"]
 margin_left = -280.0
 margin_top = 54.0
@@ -83,6 +86,8 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="InactiveCover" parent="Buttons/Iran" instance=ExtResource( 13 )]
 
 [node name="Michigan" type="Button" parent="Buttons"]
 margin_left = -280.0
@@ -96,6 +101,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="InactiveCover" parent="Buttons/Michigan" instance=ExtResource( 13 )]
+
 [node name="Italy" type="Button" parent="Buttons"]
 margin_left = -280.0
 margin_top = 234.0
@@ -107,6 +114,8 @@ script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="InactiveCover" parent="Buttons/Italy" instance=ExtResource( 13 )]
 
 [node name="Florida" type="Button" parent="Buttons"]
 margin_left = 105.0
@@ -120,6 +129,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="InactiveCover" parent="Buttons/Florida" instance=ExtResource( 13 )]
+
 [node name="Sweden" type="Button" parent="Buttons"]
 margin_left = 105.0
 margin_top = -36.0
@@ -131,6 +142,8 @@ script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="InactiveCover" parent="Buttons/Sweden" instance=ExtResource( 13 )]
 
 [node name="Illinois" type="Button" parent="Buttons"]
 margin_left = 105.0
@@ -144,6 +157,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="InactiveCover" parent="Buttons/Illinois" instance=ExtResource( 13 )]
+
 [node name="California" type="Button" parent="Buttons"]
 margin_left = 105.0
 margin_top = 144.0
@@ -156,6 +171,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="InactiveCover" parent="Buttons/California" instance=ExtResource( 13 )]
+
 [node name="USA" type="Button" parent="Buttons"]
 margin_left = 105.0
 margin_top = 234.0
@@ -167,6 +184,8 @@ script = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="InactiveCover" parent="Buttons/USA" instance=ExtResource( 13 )]
 [connection signal="pressed" from="Buttons/China" to="Buttons/China" method="_on_China_pressed"]
 [connection signal="pressed" from="Buttons/New York" to="Buttons/New York" method="_on_New_York_pressed"]
 [connection signal="pressed" from="Buttons/Iran" to="Buttons/Iran" method="_on_Iran_pressed"]
