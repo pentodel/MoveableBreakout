@@ -15,7 +15,6 @@ func _process(delta):
 		if (body.is_in_group("Bricks")):
 			$sneeze.play()
 			body.queue_free()
-			get_node("/root/World").score += 1
 		elif (body.get_name() == "CVPaddle"):
 			var speed = get_linear_velocity().length()
 			var direction = get_position() - body.get_node("Point").get_global_position()
