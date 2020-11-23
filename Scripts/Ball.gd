@@ -13,8 +13,8 @@ func _process(delta):
 	var bodies = get_colliding_bodies()
 	for body in bodies:
 		if (body.is_in_group("Bricks")):
-			body.queue_free()
 			get_node("/root/World").score += 1
+			body.queue_free()
 		if (body.get_name() == "Paddle"):
 			var speed = get_linear_velocity().length()
 			var direction = get_position() - body.get_node("Point").get_global_position()

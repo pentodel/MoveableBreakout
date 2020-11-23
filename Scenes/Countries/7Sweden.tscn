@@ -1,48 +1,26 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/7Sweden.gd" type="Script" id=1]
-[ext_resource path="res://SceneObjects/CVBrickGreen.tscn" type="PackedScene" id=2]
-[ext_resource path="res://SceneObjects/ShieldPiece.tscn" type="PackedScene" id=3]
+[ext_resource path="res://SceneObjects/CVBrickPurple.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/splatter darker.PNG" type="Texture" id=3]
 [ext_resource path="res://Scripts/CVPaddle.gd" type="Script" id=4]
 [ext_resource path="res://Fonts/MisprojectSmall.tres" type="DynamicFont" id=5]
-[ext_resource path="res://Sprites/background.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/paddle.png" type="Texture" id=7]
 [ext_resource path="res://Sound/Background_Music.wav" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 50, 5.01563 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "MichiganAnimation"
-length = 6.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Bricks:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 3, 6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ -78.4, -19.1, -78.4 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Shield:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 3, 6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -800, 0 ), Vector2( 0, 0 ) ]
-}
-
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CVPaddle" type="KinematicBody2D" parent="."]
 position = Vector2( 465, 600 )
@@ -69,12 +47,6 @@ position = Vector2( 0, 30 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 polygon = PoolVector2Array( 945, 645, 945, 0, 0, 0, 0, 645, -15, 645, -15, -15, 960, -15, 960, 645 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 465, 315 )
-scale = Vector2( 9.75, 6.65 )
-z_index = -1
-texture = ExtResource( 6 )
-
 [node name="Enemy" type="Node2D" parent="."]
 position = Vector2( 450, 270 )
 
@@ -82,201 +54,190 @@ position = Vector2( 450, 270 )
 z_index = 1
 
 [node name="Bricks" type="Node2D" parent="Enemy/Mass"]
-position = Vector2( 0, -30 )
-rotation = -0.947973
+position = Vector2( 20, 35 )
+rotation = 0.684169
 
 [node name="Brick 1" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 60, -100 )
-
-[node name="Brick 33" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 60, -170 )
-
-[node name="Brick 34" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 10, -170 )
-
-[node name="Brick 35" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -40, -170 )
-
-[node name="Brick 36" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -40, -135 )
-
-[node name="Brick 37" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 10, -135 )
-
-[node name="Brick 38" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -90, -135 )
-
-[node name="Brick 46" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -90, -100 )
-
-[node name="Brick 48" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -90, -65 )
-
-[node name="Brick 47" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -40, -100 )
-
-[node name="Brick 39" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -140, -135 )
-
-[node name="Brick 40" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -140, -170 )
-
-[node name="Brick 41" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -90, -170 )
-
-[node name="Brick 42" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -140, -205 )
-
-[node name="Brick 43" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -190, -170 )
-
-[node name="Brick 44" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -190, -135 )
-
-[node name="Brick 45" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -240, -135 )
+position = Vector2( 54.3689, -341.811 )
 
 [node name="Brick 2" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 110, -100 )
+position = Vector2( 54.369, -306.811 )
 
 [node name="Brick 3" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 60, -65 )
-
-[node name="Brick 5" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 10, -65 )
+position = Vector2( 104.369, -306.811 )
 
 [node name="Brick 4" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 110, -65 )
+position = Vector2( 4.36902, -306.811 )
+
+[node name="Brick 5" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( 4.36902, -271.811 )
 
 [node name="Brick 6" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 60, -30 )
+position = Vector2( 54.3689, -271.811 )
 
 [node name="Brick 7" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 10, -30 )
+position = Vector2( 104.369, -271.811 )
 
 [node name="Brick 8" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 110, -30 )
+position = Vector2( 104.369, -236.811 )
 
 [node name="Brick 9" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 60, 5 )
+position = Vector2( 104.369, -201.811 )
 
 [node name="Brick 10" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 10, 5 )
+position = Vector2( 54.3689, -236.811 )
 
 [node name="Brick 11" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 110, 5 )
+position = Vector2( 4.3689, -236.811 )
 
 [node name="Brick 12" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 60, 40 )
+position = Vector2( 54.3689, -201.811 )
 
 [node name="Brick 13" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 10, 40 )
+position = Vector2( 4.36902, -201.811 )
 
 [node name="Brick 14" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 110, 40 )
+position = Vector2( -45.6311, -201.811 )
 
 [node name="Brick 15" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 60, 75 )
+position = Vector2( -45.6311, -166.811 )
 
 [node name="Brick 16" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 10, 75 )
+position = Vector2( 4.3689, -166.811 )
 
 [node name="Brick 17" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 110, 75 )
+position = Vector2( 54.3689, -166.811 )
 
 [node name="Brick 18" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 60, 110 )
+position = Vector2( 54.369, -131.811 )
 
 [node name="Brick 19" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 10, 110 )
+position = Vector2( 4.36896, -131.811 )
 
 [node name="Brick 20" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 110, 110 )
+position = Vector2( -45.6311, -131.811 )
 
 [node name="Brick 21" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 60, 145 )
+position = Vector2( -45.631, -96.8108 )
 
 [node name="Brick 22" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 10, 145 )
+position = Vector2( -95.631, -96.8107 )
 
 [node name="Brick 23" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 110, 145 )
-
-[node name="Brick 27" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 160, 5 )
-
-[node name="Brick 28" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 160, 40 )
-
-[node name="Brick 29" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 160, 75 )
-
-[node name="Brick 30" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 160, 110 )
-
-[node name="Brick 31" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 160, 145 )
+position = Vector2( 4.36896, -96.8108 )
 
 [node name="Brick 24" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 60, 180 )
+position = Vector2( 54.369, -96.8108 )
 
 [node name="Brick 25" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 10, 180 )
+position = Vector2( 4.36896, -61.8108 )
 
 [node name="Brick 26" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 110, 180 )
+position = Vector2( -45.631, -61.8108 )
+
+[node name="Brick 27" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -45.631, -26.8108 )
+
+[node name="Brick 28" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -95.631, -26.8108 )
+
+[node name="Brick 29" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -95.631, -61.8108 )
+
+[node name="Brick 30" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -45.631, 8.18924 )
+
+[node name="Brick 31" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -95.631, 8.18924 )
+
+[node name="Brick 32" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -95.631, 43.1892 )
+
+[node name="Brick 33" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -45.631, 43.1892 )
+
+[node name="Brick 34" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -45.631, 78.1892 )
+
+[node name="Brick 35" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( 4.36896, 78.1892 )
+
+[node name="Brick 36" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( 4.36896, 113.189 )
+
+[node name="Brick 37" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -45.631, 113.189 )
+
+[node name="Brick 38" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -95.631, 113.189 )
+
+[node name="Brick 39" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -145.631, 113.189 )
+
+[node name="Brick 40" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -95.631, 78.1892 )
+
+[node name="Brick 41" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -145.631, 78.1892 )
+
+[node name="Brick 42" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -145.631, 43.1892 )
+
+[node name="Brick 43" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -145.631, -26.8108 )
+
+[node name="Brick 44" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -145.631, -61.8108 )
+
+[node name="Brick 45" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -145.631, 148.189 )
+
+[node name="Brick 46" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -145.631, 183.189 )
+
+[node name="Brick 47" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -145.631, 218.189 )
+
+[node name="Brick 48" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -145.631, 253.189 )
+
+[node name="Brick 49" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -145.631, 288.189 )
+
+[node name="Brick 50" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -95.631, 253.189 )
+
+[node name="Brick 51" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -95.631, 218.189 )
+
+[node name="Brick 52" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -95.631, 183.189 )
+
+[node name="Brick 53" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -95.631, 148.189 )
+
+[node name="Brick 54" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -45.631, 148.189 )
+
+[node name="Brick 55" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -45.631, 183.189 )
+
+[node name="Brick 56" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -195.631, 113.189 )
+
+[node name="Brick 57" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
+position = Vector2( -195.631, 148.189 )
 
 [node name="Shield" type="Node2D" parent="Enemy/Mass"]
-position = Vector2( -324.926, 0 )
 rotation = 1.5708
-
-[node name="ShieldPiece" parent="Enemy/Mass/Shield" instance=ExtResource( 3 )]
-position = Vector2( 235, 380 )
-rotation = 1.5708
-
-[node name="ShieldPiece2" parent="Enemy/Mass/Shield" instance=ExtResource( 3 )]
-position = Vector2( 235, 180 )
-rotation = 1.5708
-
-[node name="ShieldPiece3" parent="Enemy/Mass/Shield" instance=ExtResource( 3 )]
-position = Vector2( 235, -20 )
-rotation = 1.5708
-
-[node name="ShieldPiece4" parent="Enemy/Mass/Shield" instance=ExtResource( 3 )]
-position = Vector2( 235, -220 )
-rotation = 1.5708
-
-[node name="ShieldPiece5" parent="Enemy/Mass/Shield" instance=ExtResource( 3 )]
-position = Vector2( 235, -420 )
-rotation = 1.5708
-
-[node name="ShieldPiece6" parent="Enemy/Mass/Shield" instance=ExtResource( 3 )]
-position = Vector2( 235, -620 )
-rotation = 1.5708
-
-[node name="ShieldPiece7" parent="Enemy/Mass/Shield" instance=ExtResource( 3 )]
-position = Vector2( 235, -820 )
-rotation = 1.5708
-
-[node name="ShieldPiece8" parent="Enemy/Mass/Shield" instance=ExtResource( 3 )]
-position = Vector2( 235, -1020 )
-rotation = 1.5708
-
-[node name="ShieldPiece9" parent="Enemy/Mass/Shield" instance=ExtResource( 3 )]
-position = Vector2( 235, -1220 )
-rotation = 1.5708
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy/Mass"]
-autoplay = "MichiganAnimation"
-anims/MichiganAnimation = SubResource( 2 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 5.0
 margin_top = -5.0
-margin_right = 115.0
+margin_right = 85.0
 margin_bottom = 42.0
 custom_fonts/font = ExtResource( 5 )
-text = "Michigan"
+text = "Sweden"
 __meta__ = {
 "_edit_use_anchors_": false
 }
