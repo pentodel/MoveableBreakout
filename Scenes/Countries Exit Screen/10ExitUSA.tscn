@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Fonts/Misproject.tres" type="DynamicFont" id=1]
 [ext_resource path="res://SceneObjects/ReturnButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/Splatter.PNG" type="Texture" id=3]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -18,17 +19,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -280.0
-margin_top = 100.0
-margin_right = 280.0
-margin_bottom = 186.0
+margin_left = -540.5
+margin_top = 50.0
+margin_right = 540.5
+margin_bottom = 314.0
 custom_fonts/font = ExtResource( 1 )
-text = "You've Infected the USA!"
+text = "You've Infected the USA!
+
+Congratulations!
+The world has been infected!"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ReturnButton" parent="." instance=ExtResource( 2 )]
+margin_top = 167.0
+margin_bottom = 220.0

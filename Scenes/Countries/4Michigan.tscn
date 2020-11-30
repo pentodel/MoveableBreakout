@@ -85,7 +85,7 @@ z_index = 1
 
 [node name="Bricks" type="Node2D" parent="Enemy/Mass"]
 position = Vector2( 0, -30 )
-rotation = -0.947973
+rotation = -0.919847
 
 [node name="Brick 1" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
 position = Vector2( 60, -100 )
@@ -229,7 +229,7 @@ position = Vector2( 10, 180 )
 position = Vector2( 110, 180 )
 
 [node name="Shield" type="Node2D" parent="Enemy/Mass"]
-position = Vector2( -324.926, 0 )
+position = Vector2( -346.667, 0 )
 rotation = 1.5708
 
 [node name="ShieldPiece" parent="Enemy/Mass/Shield" instance=ExtResource( 3 )]

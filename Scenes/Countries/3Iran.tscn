@@ -251,7 +251,7 @@ position = Vector2( 95, 115 )
 position = Vector2( 45, -95 )
 
 [node name="Shield" type="Node2D" parent="Enemy/Mass"]
-rotation = 1.5708
+rotation = 3.37721
 
 [node name="ShieldPiece2" parent="Enemy/Mass/Shield" instance=ExtResource( 7 )]
 position = Vector2( 0, 250 )

@@ -281,6 +281,7 @@ position = Vector2( 27.7778, 92.2222 )
 position = Vector2( 77.7778, 92.2222 )
 
 [node name="Shield" type="Node2D" parent="Enemy/Mass"]
+position = Vector2( 20, 0 )
 rotation = 1.5708
 __meta__ = {
 "_edit_group_": true

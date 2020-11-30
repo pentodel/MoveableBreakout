@@ -1,15 +1,33 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/6Florida.gd" type="Script" id=1]
 [ext_resource path="res://SceneObjects/CVBrickIndigo.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/splatter darker.PNG" type="Texture" id=3]
 [ext_resource path="res://Scripts/CVPaddle.gd" type="Script" id=4]
 [ext_resource path="res://Fonts/MisprojectSmall.tres" type="DynamicFont" id=5]
+[ext_resource path="res://SceneObjects/AlligatorShieldPiece.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/paddle.png" type="Texture" id=7]
 [ext_resource path="res://Sound/Background_Music.wav" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 50, 5.01563 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "floridaanim"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Shield:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 6000 ) ]
+}
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -54,175 +72,248 @@ position = Vector2( 450, 270 )
 z_index = 1
 
 [node name="Bricks" type="Node2D" parent="Enemy/Mass"]
-position = Vector2( 0, -30 )
+position = Vector2( 11.8921, -55.7029 )
+scale = Vector2( 0.9, 0.9 )
 
 [node name="Brick 1" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -305, -152.5 )
+position = Vector2( -305, -150 )
 
 [node name="Brick 2" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -305, -117.5 )
+position = Vector2( -305, -115 )
 
 [node name="Brick 3" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -255, -117.5 )
+position = Vector2( -255, -115 )
 
 [node name="Brick 4" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -205, -117.5 )
+position = Vector2( -205.556, -114.167 )
 
 [node name="Brick 5" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -255, -152.5 )
+position = Vector2( -255, -150 )
 
 [node name="Brick 6" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -205, -152.5 )
+position = Vector2( -205, -150 )
 
 [node name="Brick 7" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -155, -155 )
+position = Vector2( -155, -150 )
 
 [node name="Brick 8" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -155, -117.5 )
+position = Vector2( -155, -115 )
 
 [node name="Brick 9" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -155, -85 )
+position = Vector2( -155, -80 )
 
 [node name="Brick 10" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -105, -85 )
+position = Vector2( -105, -80 )
 
 [node name="Brick 11" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -105, -120 )
+position = Vector2( -105, -115 )
 
 [node name="Brick 12" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -55, -120 )
+position = Vector2( -55, -115 )
 
 [node name="Brick 13" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -55, -155 )
+position = Vector2( -55, -150 )
 
 [node name="Brick 14" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -105, -155 )
+position = Vector2( -105, -150 )
 
 [node name="Brick 15" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -5, -155 )
+position = Vector2( -5, -150 )
 
 [node name="Brick 16" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -5, -120 )
+position = Vector2( -5, -115 )
 
 [node name="Brick 17" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( -5, -85 )
+position = Vector2( -5, -80 )
 
 [node name="Brick 18" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 45, -85 )
+position = Vector2( 45, -80 )
 
 [node name="Brick 19" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 45, -50 )
+position = Vector2( 45, -45 )
 
 [node name="Brick 20" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 45, -120 )
+position = Vector2( 45, -115 )
 
 [node name="Brick 21" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 45, -155 )
+position = Vector2( 45, -150 )
 
 [node name="Brick 22" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 95, -155 )
+position = Vector2( 95, -150 )
 
 [node name="Brick 23" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 95, -190 )
+position = Vector2( 95, -185 )
 
 [node name="Brick 24" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 95, -120 )
+position = Vector2( 95, -115 )
 
 [node name="Brick 25" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 95, -85 )
+position = Vector2( 95, -80 )
 
 [node name="Brick 26" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 95, -50 )
+position = Vector2( 95, -45 )
 
 [node name="Brick 27" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 145, -50 )
+position = Vector2( 145, -45 )
 
 [node name="Brick 28" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 145, -15 )
+position = Vector2( 145, -10 )
 
 [node name="Brick 29" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 95, -15 )
+position = Vector2( 95, -10 )
 
 [node name="Brick 30" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 45, -15 )
+position = Vector2( 45, -10 )
 
 [node name="Brick 31" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 45, 20 )
+position = Vector2( 45, 25 )
 
 [node name="Brick 32" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 95, 20 )
+position = Vector2( 95, 25 )
 
 [node name="Brick 33" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 145, -85 )
+position = Vector2( 145, -80 )
 
 [node name="Brick 34" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 145, 20 )
+position = Vector2( 145, 25 )
 
 [node name="Brick 35" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 195, 20 )
+position = Vector2( 195, 25 )
 
 [node name="Brick 37" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 95, 55 )
+position = Vector2( 95, 60 )
 
 [node name="Brick 38" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 145, 55 )
+position = Vector2( 145, 60 )
 
 [node name="Brick 39" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 195, 55 )
+position = Vector2( 195, 60 )
 
 [node name="Brick 40" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 95, 90 )
+position = Vector2( 95, 95 )
 
 [node name="Brick 41" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 145, 90 )
+position = Vector2( 145, 95 )
 
 [node name="Brick 42" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 195, 90 )
+position = Vector2( 195, 95 )
 
 [node name="Brick 43" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 195, 125 )
+position = Vector2( 195, 130 )
 
 [node name="Brick 44" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 195, 160 )
+position = Vector2( 195, 165 )
 
 [node name="Brick 45" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 195, 195 )
+position = Vector2( 195, 200 )
 
 [node name="Brick 46" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 145, 160 )
+position = Vector2( 145, 165 )
 
 [node name="Brick 47" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 145, 125 )
+position = Vector2( 145, 130 )
 
 [node name="Brick 48" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 95, 125 )
+position = Vector2( 95, 130 )
 
 [node name="Brick 49" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 195, 230 )
+position = Vector2( 195, 235 )
 
 [node name="Brick 50" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 145, 195 )
+position = Vector2( 145, 200 )
 
 [node name="Brick 51" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 245, 160 )
+position = Vector2( 245, 165 )
 
 [node name="Brick 52" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 245, 195 )
+position = Vector2( 245, 200 )
 
 [node name="Brick 53" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 245, 125 )
+position = Vector2( 245, 130 )
 
 [node name="Brick 54" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 245, 90 )
+position = Vector2( 245, 95 )
 
 [node name="Brick 55" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 245, 230 )
+position = Vector2( 245, 235 )
 
 [node name="Brick 36" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
-position = Vector2( 45, 55 )
+position = Vector2( 45, 60 )
 
 [node name="Shield" type="Node2D" parent="Enemy/Mass"]
+position = Vector2( 0, 780 )
+
+[node name="Alligator" parent="Enemy/Mass/Shield" instance=ExtResource( 6 )]
+position = Vector2( -228.864, -409.226 )
 rotation = 1.5708
+
+[node name="Alligator2" parent="Enemy/Mass/Shield" instance=ExtResource( 6 )]
+position = Vector2( -46.9151, -535.282 )
+rotation = 1.5708
+
+[node name="Alligator3" parent="Enemy/Mass/Shield" instance=ExtResource( 6 )]
+position = Vector2( -338.271, -643.499 )
+rotation = 1.5708
+
+[node name="Alligator4" parent="Enemy/Mass/Shield" instance=ExtResource( 6 )]
+position = Vector2( 440.692, -659.122 )
+rotation = 1.5708
+
+[node name="Alligator5" parent="Enemy/Mass/Shield" instance=ExtResource( 6 )]
+position = Vector2( 249.773, -852.869 )
+rotation = 1.5708
+
+[node name="Alligator6" parent="Enemy/Mass/Shield" instance=ExtResource( 6 )]
+position = Vector2( -133.479, -971.663 )
+rotation = 1.5708
+
+[node name="Alligator7" parent="Enemy/Mass/Shield" instance=ExtResource( 6 )]
+position = Vector2( 340.283, -1101.77 )
+rotation = 1.5708
+
+[node name="Alligator8" parent="Enemy/Mass/Shield" instance=ExtResource( 6 )]
+position = Vector2( -298.609, -1406.55 )
+rotation = 1.5708
+
+[node name="Alligator9" parent="Enemy/Mass/Shield" instance=ExtResource( 6 )]
+position = Vector2( 97.6443, -1261.23 )
+rotation = 1.5708
+
+[node name="Alligator10" parent="Enemy/Mass/Shield" instance=ExtResource( 6 )]
+position = Vector2( 436.368, -1668.81 )
+rotation = 1.5708
+
+[node name="Alligator11" parent="Enemy/Mass/Shield" instance=ExtResource( 6 )]
+position = Vector2( 182.509, -1966.65 )
+rotation = 1.5708
+
+[node name="Alligator12" parent="Enemy/Mass/Shield" instance=ExtResource( 6 )]
+position = Vector2( -398.023, -2115.2 )
+rotation = 1.5708
+
+[node name="Alligator14" parent="Enemy/Mass/Shield" instance=ExtResource( 6 )]
+position = Vector2( -29.6072, -2563.71 )
+rotation = 1.5708
+
+[node name="Alligator15" parent="Enemy/Mass/Shield" instance=ExtResource( 6 )]
+position = Vector2( 416.229, -2366.15 )
+rotation = 1.5708
+
+[node name="Alligator16" parent="Enemy/Mass/Shield" instance=ExtResource( 6 )]
+position = Vector2( -244.483, -3019.31 )
+rotation = 1.5708
+
+[node name="Alligator17" parent="Enemy/Mass/Shield" instance=ExtResource( 6 )]
+position = Vector2( 370.923, -3272.27 )
+rotation = 1.5708
+
+[node name="Alligator13" parent="Enemy/Mass/Shield" instance=ExtResource( 6 )]
+position = Vector2( -102.718, -1675.9 )
+rotation = 1.5708
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy/Mass"]
+autoplay = "floridaanim"
+anims/floridaanim = SubResource( 2 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 5.0

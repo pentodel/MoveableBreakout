@@ -1,15 +1,57 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/7Sweden.gd" type="Script" id=1]
 [ext_resource path="res://SceneObjects/CVBrickPurple.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/splatter darker.PNG" type="Texture" id=3]
 [ext_resource path="res://Scripts/CVPaddle.gd" type="Script" id=4]
 [ext_resource path="res://Fonts/MisprojectSmall.tres" type="DynamicFont" id=5]
+[ext_resource path="res://SceneObjects/ShieldPiece.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/paddle.png" type="Texture" id=7]
 [ext_resource path="res://Sound/Background_Music.wav" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 50, 5.01563 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "SwedenAnim"
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Bricks:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1.5, 4.5 ),
+"transitions": PoolRealArray( 3.73213, 3.73213 ),
+"update": 0,
+"values": [ 42.7, 111.9 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shield/Left:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2.5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -400, -35 ), Vector2( -400, -35 ), Vector2( -400, 1505 ), Vector2( -400, 1505 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shield/Right:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 4, 5.5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 445, 0 ), Vector2( 445, 0 ), Vector2( 445, 1540 ), Vector2( 445, 1540 ) ]
+}
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -54,8 +96,11 @@ position = Vector2( 450, 270 )
 z_index = 1
 
 [node name="Bricks" type="Node2D" parent="Enemy/Mass"]
-position = Vector2( 20, 35 )
-rotation = 0.684169
+position = Vector2( 0, 15 )
+rotation = 0.752171
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Brick 1" parent="Enemy/Mass/Bricks" instance=ExtResource( 2 )]
 position = Vector2( 54.3689, -341.811 )
@@ -229,7 +274,75 @@ position = Vector2( -195.631, 113.189 )
 position = Vector2( -195.631, 148.189 )
 
 [node name="Shield" type="Node2D" parent="Enemy/Mass"]
-rotation = 1.5708
+
+[node name="Left" type="Node2D" parent="Enemy/Mass/Shield"]
+position = Vector2( -400, 1250.63 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ShieldPiece" parent="Enemy/Mass/Shield/Left" instance=ExtResource( 6 )]
+position = Vector2( 0, -270 )
+rotation = 0.785398
+
+[node name="ShieldPiece2" parent="Enemy/Mass/Shield/Left" instance=ExtResource( 6 )]
+position = Vector2( 0, -410 )
+rotation = 0.785398
+
+[node name="ShieldPiece3" parent="Enemy/Mass/Shield/Left" instance=ExtResource( 6 )]
+position = Vector2( 0, -550 )
+rotation = 0.785398
+
+[node name="ShieldPiece4" parent="Enemy/Mass/Shield/Left" instance=ExtResource( 6 )]
+position = Vector2( 0, -690 )
+rotation = 0.785398
+
+[node name="ShieldPiece5" parent="Enemy/Mass/Shield/Left" instance=ExtResource( 6 )]
+position = Vector2( 0, -830 )
+rotation = 0.785398
+
+[node name="ShieldPiece6" parent="Enemy/Mass/Shield/Left" instance=ExtResource( 6 )]
+position = Vector2( 0, -970 )
+rotation = 0.785398
+
+[node name="ShieldPiece7" parent="Enemy/Mass/Shield/Left" instance=ExtResource( 6 )]
+position = Vector2( 0, -1110 )
+rotation = 0.785398
+
+[node name="Right" type="Node2D" parent="Enemy/Mass/Shield"]
+position = Vector2( 445, 0 )
+
+[node name="ShieldPiece8" parent="Enemy/Mass/Shield/Right" instance=ExtResource( 6 )]
+position = Vector2( 0, -305 )
+rotation = 2.35619
+
+[node name="ShieldPiece9" parent="Enemy/Mass/Shield/Right" instance=ExtResource( 6 )]
+position = Vector2( 0, -445 )
+rotation = 2.35619
+
+[node name="ShieldPiece10" parent="Enemy/Mass/Shield/Right" instance=ExtResource( 6 )]
+position = Vector2( 0, -585 )
+rotation = 2.35619
+
+[node name="ShieldPiece11" parent="Enemy/Mass/Shield/Right" instance=ExtResource( 6 )]
+position = Vector2( 0, -725 )
+rotation = 2.35619
+
+[node name="ShieldPiece12" parent="Enemy/Mass/Shield/Right" instance=ExtResource( 6 )]
+position = Vector2( 0, -865 )
+rotation = 2.35619
+
+[node name="ShieldPiece13" parent="Enemy/Mass/Shield/Right" instance=ExtResource( 6 )]
+position = Vector2( 0, -1005 )
+rotation = 2.35619
+
+[node name="ShieldPiece14" parent="Enemy/Mass/Shield/Right" instance=ExtResource( 6 )]
+position = Vector2( 0, -1145 )
+rotation = 2.35619
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy/Mass"]
+autoplay = "SwedenAnim"
+anims/SwedenAnim = SubResource( 2 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 5.0
