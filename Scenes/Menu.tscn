@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Fonts/Misproject.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Fonts/MisprojectSmall.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scripts/PlayClassic.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/PlayNew.gd" type="Script" id=4]
 [ext_resource path="res://Sprites/Splatter.PNG" type="Texture" id=5]
+[ext_resource path="res://Fonts/Evander.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Scripts/ScoreBoard.gd" type="Script" id=7]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -25,12 +27,15 @@ __meta__ = {
 margin_right = 945.0
 margin_bottom = 630.0
 texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Title" type="Label" parent="."]
 margin_left = 300.0
-margin_top = 75.0
+margin_top = 45.0
 margin_right = 623.0
-margin_bottom = 161.0
+margin_bottom = 131.0
 custom_fonts/font = ExtResource( 1 )
 text = "COVID Crusher"
 __meta__ = {
@@ -38,9 +43,9 @@ __meta__ = {
 }
 
 [node name="PlayClassic" type="Button" parent="."]
-margin_left = 360.0
+margin_left = 75.0
 margin_top = 180.0
-margin_right = 570.0
+margin_right = 285.0
 margin_bottom = 270.0
 custom_fonts/font = ExtResource( 2 )
 text = "Play Classic"
@@ -50,10 +55,10 @@ __meta__ = {
 }
 
 [node name="PlayNew" type="Button" parent="."]
-margin_left = 360.0
-margin_top = 285.0
-margin_right = 570.0
-margin_bottom = 375.0
+margin_left = 75.0
+margin_top = 300.0
+margin_right = 285.0
+margin_bottom = 390.0
 custom_fonts/font = ExtResource( 2 )
 text = "Play New"
 script = ExtResource( 4 )
@@ -61,11 +66,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ScoreBoard" type="Button" parent="."]
+margin_left = 75.0
+margin_top = 420.0
+margin_right = 285.0
+margin_bottom = 510.0
+custom_fonts/font = ExtResource( 2 )
+text = "Score Board"
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label2" type="Label" parent="."]
-margin_left = 10.0
-margin_top = 556.0
-margin_right = 276.0
-margin_bottom = 621.0
+margin_left = 6.0
+margin_top = 560.0
+margin_right = 272.0
+margin_bottom = 625.0
 custom_colors/font_color = Color( 1, 0.690196, 0.690196, 1 )
 text = "How to play:
 Click or Spacebar to create a new ball.
@@ -74,5 +91,39 @@ Press Q to clear the ball if necessary."
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label" type="Label" parent="."]
+margin_left = 315.0
+margin_top = 210.0
+margin_right = 725.0
+margin_bottom = 241.0
+custom_fonts/font = ExtResource( 6 )
+text = "Play a classic game of Breakout!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 315.0
+margin_top = 330.0
+margin_right = 887.0
+margin_bottom = 361.0
+custom_fonts/font = ExtResource( 6 )
+text = "Play as the Coronavirus and infect the world!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 315.0
+margin_top = 450.0
+margin_right = 911.0
+margin_bottom = 481.0
+custom_fonts/font = ExtResource( 6 )
+text = "See how many balls you've used for each level!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="PlayClassic" to="PlayClassic" method="_on_PlayClassic_pressed"]
 [connection signal="pressed" from="PlayNew" to="PlayNew" method="_on_PlayNew_pressed"]
+[connection signal="pressed" from="ScoreBoard" to="ScoreBoard" method="_on_ScoreBoard_pressed"]

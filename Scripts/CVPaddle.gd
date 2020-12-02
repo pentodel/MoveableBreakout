@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 const ball_scene = preload("res://SceneObjects/COVID.tscn")
+onready var global = get_node("/root/Global")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,6 +19,7 @@ func _input(event):
 		var all_balls = get_tree().get_nodes_in_group("Balls")
 		if len(all_balls) < 1:
 			var ball = ball_scene.instance()
+			global.currentscore += 1
 			ball.set_position(get_position() - Vector2(0,10))
 			get_tree().get_root().add_child(ball)
 	if (event is InputEventKey && event.scancode == KEY_Q):

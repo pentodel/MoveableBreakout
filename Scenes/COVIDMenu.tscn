@@ -13,7 +13,7 @@
 [ext_resource path="res://Scripts/CountryButtons/CaliforniaButton.gd" type="Script" id=11]
 [ext_resource path="res://Scripts/CountryButtons/USAButton.gd" type="Script" id=12]
 [ext_resource path="res://SceneObjects/InactiveCover.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scripts/BackButton.gd" type="Script" id=14]
+[ext_resource path="res://SceneObjects/BackButton.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Sprites/Splatter.PNG" type="Texture" id=15]
 
 [node name="Control" type="Control"]
@@ -39,12 +39,12 @@ __meta__ = {
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -171.0
-margin_top = 21.0
-margin_right = 171.0
-margin_bottom = 107.0
+margin_left = -202.0
+margin_top = 20.0
+margin_right = 202.0
+margin_bottom = 106.0
 custom_fonts/font = ExtResource( 1 )
-text = "Select A Level"
+text = "Infect the world!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -83,6 +83,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "New York"
 script = ExtResource( 4 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -97,6 +98,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "Iran"
 script = ExtResource( 5 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -111,6 +113,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "Michigan"
 script = ExtResource( 6 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -125,6 +128,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "Italy"
 script = ExtResource( 7 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -139,6 +143,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "Florida"
 script = ExtResource( 8 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -153,6 +158,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "Sweden"
 script = ExtResource( 9 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -167,6 +173,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "Illinois"
 script = ExtResource( 10 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -181,6 +188,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "California"
 script = ExtResource( 11 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -195,22 +203,13 @@ custom_fonts/font = ExtResource( 2 )
 text = "USA"
 script = ExtResource( 12 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="InactiveCover" parent="Buttons/USA" instance=ExtResource( 13 )]
 
-[node name="BackButton" type="Button" parent="."]
-margin_left = 15.0
-margin_top = 555.0
-margin_right = 115.0
-margin_bottom = 615.0
-custom_fonts/font = ExtResource( 2 )
-text = "< Back"
-script = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="BackButton" parent="." instance=ExtResource( 14 )]
 [connection signal="pressed" from="Buttons/China" to="Buttons/China" method="_on_China_pressed"]
 [connection signal="pressed" from="Buttons/New York" to="Buttons/New York" method="_on_New_York_pressed"]
 [connection signal="pressed" from="Buttons/Iran" to="Buttons/Iran" method="_on_Iran_pressed"]
@@ -221,4 +220,3 @@ __meta__ = {
 [connection signal="pressed" from="Buttons/Illinois" to="Buttons/Illinois" method="_on_Illinois_pressed"]
 [connection signal="pressed" from="Buttons/California" to="Buttons/California" method="_on_California_pressed"]
 [connection signal="pressed" from="Buttons/USA" to="Buttons/USA" method="_on_USA_pressed"]
-[connection signal="pressed" from="BackButton" to="BackButton" method="_on_BackButton_pressed"]
