@@ -1,0 +1,301 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Fonts/MisprojectSmall.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Sprites/paddle.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/1China.gd" type="Script" id=3]
+[ext_resource path="res://SceneObjects/CVBrick.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sprites/splatter darker.PNG" type="Texture" id=5]
+[ext_resource path="res://Sound/covidmusic.wav" type="AudioStream" id=6]
+[ext_resource path="res://Scripts/CVPaddle.gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 50, 5.01563 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "ChinaMove"
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Mass:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3, 6 ),
+"transitions": PoolRealArray( 1, 0.999999, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 350, 0 ), Vector2( 0, 0 ) ]
+}
+
+[node name="World" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CVPaddle" type="KinematicBody2D" parent="."]
+position = Vector2( 465, 600 )
+script = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="CVPaddle"]
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CVPaddle"]
+position = Vector2( 2.98023e-07, 2.23517e-08 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point" type="Position2D" parent="CVPaddle"]
+position = Vector2( 0, 30 )
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+polygon = PoolVector2Array( 945, 645, 945, 0, 0, 0, 0, 645, -15, 645, -15, -15, 960, -15, 960, 645 )
+
+[node name="Enemy" type="Node2D" parent="."]
+
+[node name="Mass" type="Node2D" parent="Enemy"]
+z_index = 1
+
+[node name="Bricks" type="Node2D" parent="Enemy/Mass"]
+
+[node name="Brick 1" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 130, 80 )
+
+[node name="Brick 2" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 130, 115 )
+
+[node name="Brick 3" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 130, 150 )
+
+[node name="Brick 4" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 80, 115 )
+
+[node name="Brick 5" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 80, 150 )
+
+[node name="Brick 7" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 30, 185 )
+
+[node name="Brick 8" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 80, 185 )
+
+[node name="Brick 9" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 180, 150 )
+
+[node name="Brick 10" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 130, 185 )
+
+[node name="Brick 11" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 180, 185 )
+
+[node name="Brick 12" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 230, 185 )
+
+[node name="Brick 13" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 280, 185 )
+
+[node name="Brick 14" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 330, 185 )
+
+[node name="Brick 45" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 30, 220 )
+
+[node name="Brick 46" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 80, 220 )
+
+[node name="Brick 47" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 130, 220 )
+
+[node name="Brick 48" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 180, 220 )
+
+[node name="Brick 49" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 230, 220 )
+
+[node name="Brick 50" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 280, 220 )
+
+[node name="Brick 51" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 330, 220 )
+
+[node name="Brick 52" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 30, 255 )
+
+[node name="Brick 53" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 80, 255 )
+
+[node name="Brick 54" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 130, 255 )
+
+[node name="Brick 55" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 180, 255 )
+
+[node name="Brick 56" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 230, 255 )
+
+[node name="Brick 57" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 280, 255 )
+
+[node name="Brick 58" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 330, 255 )
+
+[node name="Brick 59" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 80, 290 )
+
+[node name="Brick 60" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 130, 290 )
+
+[node name="Brick 65" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 130, 325 )
+
+[node name="Brick 61" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 180, 290 )
+
+[node name="Brick 62" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 230, 290 )
+
+[node name="Brick 63" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 280, 290 )
+
+[node name="Brick 64" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 330, 290 )
+
+[node name="Brick 66" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 180, 325 )
+
+[node name="Brick 67" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 230, 325 )
+
+[node name="Brick 68" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 280, 325 )
+
+[node name="Brick 69" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 330, 325 )
+
+[node name="Brick 70" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 230, 360 )
+
+[node name="Brick 73" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 230, 395 )
+
+[node name="Brick 74" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 280, 395 )
+
+[node name="Brick 75" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 330, 395 )
+
+[node name="Brick 76" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 330, 430 )
+
+[node name="Brick 71" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 280, 360 )
+
+[node name="Brick 72" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 330, 360 )
+
+[node name="Brick 15" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 380, 185 )
+
+[node name="Brick 16" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 380, 150 )
+
+[node name="Brick 17" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 430, 150 )
+
+[node name="Brick 18" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 430, 185 )
+
+[node name="Brick 19" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 480, 150 )
+
+[node name="Brick 20" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 480, 115 )
+
+[node name="Brick 21" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 480, 80 )
+
+[node name="Brick 22" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 530, 80 )
+
+[node name="Brick 23" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 430, 80 )
+
+[node name="Brick 24" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 430, 45 )
+
+[node name="Brick 25" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 380, 80 )
+
+[node name="Brick 26" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 430, 115 )
+
+[node name="Brick 27" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 380, 115 )
+
+[node name="Brick 28" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 430, 220 )
+
+[node name="Brick 29" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 380, 220 )
+
+[node name="Brick 30" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 380, 255 )
+
+[node name="Brick 31" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 380, 290 )
+
+[node name="Brick 32" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 430, 290 )
+
+[node name="Brick 33" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 430, 325 )
+
+[node name="Brick 34" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 380, 325 )
+
+[node name="Brick 35" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 380, 360 )
+
+[node name="Brick 36" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 380, 395 )
+
+[node name="Brick 37" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 430, 360 )
+
+[node name="Brick 6" parent="Enemy/Mass/Bricks" instance=ExtResource( 4 )]
+position = Vector2( 30, 150 )
+
+[node name="Shield" type="Node2D" parent="Enemy/Mass"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy"]
+autoplay = "ChinaMove"
+anims/ChinaMove = SubResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 5.0
+margin_top = -5.0
+margin_right = 75.0
+margin_bottom = 42.0
+custom_fonts/font = ExtResource( 1 )
+text = "China"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+volume_db = 15.0
+autoplay = true
