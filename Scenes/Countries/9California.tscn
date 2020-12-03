@@ -7,7 +7,7 @@
 [ext_resource path="res://Fonts/MisprojectSmall.tres" type="DynamicFont" id=5]
 [ext_resource path="res://SceneObjects/ShieldPiece.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/paddle.png" type="Texture" id=7]
-[ext_resource path="res://Sound/Background_Music.wav" type="AudioStream" id=8]
+[ext_resource path="res://Sound/covidmusic.wav" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 50, 5.01563 )
@@ -336,12 +336,10 @@ __meta__ = {
 
 [node name="ShieldPiece" parent="Enemy/Mass/Shield/Carat" instance=ExtResource( 6 )]
 rotation = 0.785398
-scale = Vector2( 1, 1 )
 
 [node name="ShieldPiece2" parent="Enemy/Mass/Shield/Carat" instance=ExtResource( 6 )]
 position = Vector2( 43, 0 )
 rotation = -0.785398
-scale = Vector2( 1, 1 )
 
 [node name="Carat2" type="Node2D" parent="Enemy/Mass/Shield"]
 position = Vector2( -200, 250 )
@@ -352,12 +350,10 @@ __meta__ = {
 
 [node name="ShieldPiece" parent="Enemy/Mass/Shield/Carat2" instance=ExtResource( 6 )]
 rotation = 0.785398
-scale = Vector2( 1, 1 )
 
 [node name="ShieldPiece2" parent="Enemy/Mass/Shield/Carat2" instance=ExtResource( 6 )]
 position = Vector2( 43, 0 )
 rotation = -0.785398
-scale = Vector2( 1, 1 )
 
 [node name="Carat3" type="Node2D" parent="Enemy/Mass/Shield"]
 position = Vector2( 0, 250 )
@@ -368,12 +364,10 @@ __meta__ = {
 
 [node name="ShieldPiece" parent="Enemy/Mass/Shield/Carat3" instance=ExtResource( 6 )]
 rotation = 0.785398
-scale = Vector2( 1, 1 )
 
 [node name="ShieldPiece2" parent="Enemy/Mass/Shield/Carat3" instance=ExtResource( 6 )]
 position = Vector2( 43, 0 )
 rotation = -0.785398
-scale = Vector2( 1, 1 )
 
 [node name="Carat4" type="Node2D" parent="Enemy/Mass/Shield"]
 position = Vector2( 200, 250 )
@@ -384,12 +378,10 @@ __meta__ = {
 
 [node name="ShieldPiece" parent="Enemy/Mass/Shield/Carat4" instance=ExtResource( 6 )]
 rotation = 0.785398
-scale = Vector2( 1, 1 )
 
 [node name="ShieldPiece2" parent="Enemy/Mass/Shield/Carat4" instance=ExtResource( 6 )]
 position = Vector2( 43, 0 )
 rotation = -0.785398
-scale = Vector2( 1, 1 )
 
 [node name="Carat5" type="Node2D" parent="Enemy/Mass/Shield"]
 position = Vector2( 400, 250 )
@@ -400,12 +392,10 @@ __meta__ = {
 
 [node name="ShieldPiece" parent="Enemy/Mass/Shield/Carat5" instance=ExtResource( 6 )]
 rotation = 0.785398
-scale = Vector2( 1, 1 )
 
 [node name="ShieldPiece2" parent="Enemy/Mass/Shield/Carat5" instance=ExtResource( 6 )]
 position = Vector2( 43, 0 )
 rotation = -0.785398
-scale = Vector2( 1, 1 )
 
 [node name="Carat6" type="Node2D" parent="Enemy/Mass/Shield"]
 position = Vector2( 600, 250 )
@@ -416,12 +406,10 @@ __meta__ = {
 
 [node name="ShieldPiece" parent="Enemy/Mass/Shield/Carat6" instance=ExtResource( 6 )]
 rotation = 0.785398
-scale = Vector2( 1, 1 )
 
 [node name="ShieldPiece2" parent="Enemy/Mass/Shield/Carat6" instance=ExtResource( 6 )]
 position = Vector2( 43, 0 )
 rotation = -0.785398
-scale = Vector2( 1, 1 )
 
 [node name="Shield2" type="Node2D" parent="Enemy/Mass"]
 position = Vector2( -243, -425 )
@@ -434,12 +422,10 @@ __meta__ = {
 
 [node name="ShieldPiece" parent="Enemy/Mass/Shield2/Carat" instance=ExtResource( 6 )]
 rotation = 0.785398
-scale = Vector2( 1, 1 )
 
 [node name="ShieldPiece2" parent="Enemy/Mass/Shield2/Carat" instance=ExtResource( 6 )]
 position = Vector2( 43, 0 )
 rotation = -0.785398
-scale = Vector2( 1, 1 )
 
 [node name="Carat2" type="Node2D" parent="Enemy/Mass/Shield2"]
 position = Vector2( -200, 250 )
@@ -449,12 +435,10 @@ __meta__ = {
 
 [node name="ShieldPiece" parent="Enemy/Mass/Shield2/Carat2" instance=ExtResource( 6 )]
 rotation = 0.785398
-scale = Vector2( 1, 1 )
 
 [node name="ShieldPiece2" parent="Enemy/Mass/Shield2/Carat2" instance=ExtResource( 6 )]
 position = Vector2( 43, 0 )
 rotation = -0.785398
-scale = Vector2( 1, 1 )
 
 [node name="Carat3" type="Node2D" parent="Enemy/Mass/Shield2"]
 position = Vector2( 0, 250 )
@@ -464,12 +448,10 @@ __meta__ = {
 
 [node name="ShieldPiece" parent="Enemy/Mass/Shield2/Carat3" instance=ExtResource( 6 )]
 rotation = 0.785398
-scale = Vector2( 1, 1 )
 
 [node name="ShieldPiece2" parent="Enemy/Mass/Shield2/Carat3" instance=ExtResource( 6 )]
 position = Vector2( 43, 0 )
 rotation = -0.785398
-scale = Vector2( 1, 1 )
 
 [node name="Carat4" type="Node2D" parent="Enemy/Mass/Shield2"]
 position = Vector2( 200, 250 )
@@ -479,12 +461,10 @@ __meta__ = {
 
 [node name="ShieldPiece" parent="Enemy/Mass/Shield2/Carat4" instance=ExtResource( 6 )]
 rotation = 0.785398
-scale = Vector2( 1, 1 )
 
 [node name="ShieldPiece2" parent="Enemy/Mass/Shield2/Carat4" instance=ExtResource( 6 )]
 position = Vector2( 43, 0 )
 rotation = -0.785398
-scale = Vector2( 1, 1 )
 
 [node name="Carat5" type="Node2D" parent="Enemy/Mass/Shield2"]
 position = Vector2( 400, 250 )
@@ -494,12 +474,10 @@ __meta__ = {
 
 [node name="ShieldPiece" parent="Enemy/Mass/Shield2/Carat5" instance=ExtResource( 6 )]
 rotation = 0.785398
-scale = Vector2( 1, 1 )
 
 [node name="ShieldPiece2" parent="Enemy/Mass/Shield2/Carat5" instance=ExtResource( 6 )]
 position = Vector2( 43, 0 )
 rotation = -0.785398
-scale = Vector2( 1, 1 )
 
 [node name="Carat6" type="Node2D" parent="Enemy/Mass/Shield2"]
 position = Vector2( 600, 250 )
@@ -509,12 +487,10 @@ __meta__ = {
 
 [node name="ShieldPiece" parent="Enemy/Mass/Shield2/Carat6" instance=ExtResource( 6 )]
 rotation = 0.785398
-scale = Vector2( 1, 1 )
 
 [node name="ShieldPiece2" parent="Enemy/Mass/Shield2/Carat6" instance=ExtResource( 6 )]
 position = Vector2( 43, 0 )
 rotation = -0.785398
-scale = Vector2( 1, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy/Mass"]
 autoplay = "CaliforniaAnim"
@@ -533,5 +509,6 @@ __meta__ = {
 
 [node name="background_music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 8 )
+volume_db = 15.0
 autoplay = true
 attenuation = 0.707107

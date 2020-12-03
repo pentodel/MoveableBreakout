@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Fonts/Misproject.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Fonts/MisprojectSmall.tres" type="DynamicFont" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Sprites/Splatter.PNG" type="Texture" id=5]
 [ext_resource path="res://Fonts/Evander.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Scripts/ScoreBoard.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/SoundControl.gd" type="Script" id=8]
+[ext_resource path="res://Sound/menu.wav" type="AudioStream" id=9]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -43,9 +45,9 @@ __meta__ = {
 }
 
 [node name="PlayClassic" type="Button" parent="."]
-margin_left = 75.0
+margin_left = 59.0
 margin_top = 180.0
-margin_right = 285.0
+margin_right = 269.0
 margin_bottom = 270.0
 custom_fonts/font = ExtResource( 2 )
 text = "Play Classic"
@@ -55,9 +57,9 @@ __meta__ = {
 }
 
 [node name="PlayNew" type="Button" parent="."]
-margin_left = 75.0
+margin_left = 59.0
 margin_top = 300.0
-margin_right = 285.0
+margin_right = 269.0
 margin_bottom = 390.0
 custom_fonts/font = ExtResource( 2 )
 text = "Play New"
@@ -67,9 +69,9 @@ __meta__ = {
 }
 
 [node name="ScoreBoard" type="Button" parent="."]
-margin_left = 75.0
+margin_left = 59.0
 margin_top = 420.0
-margin_right = 285.0
+margin_right = 269.0
 margin_bottom = 510.0
 custom_fonts/font = ExtResource( 2 )
 text = "Score Board"
@@ -93,9 +95,9 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 315.0
+margin_left = 299.0
 margin_top = 210.0
-margin_right = 725.0
+margin_right = 709.0
 margin_bottom = 241.0
 custom_fonts/font = ExtResource( 6 )
 text = "Play a classic game of Breakout!"
@@ -104,9 +106,9 @@ __meta__ = {
 }
 
 [node name="Label3" type="Label" parent="."]
-margin_left = 315.0
+margin_left = 299.0
 margin_top = 330.0
-margin_right = 887.0
+margin_right = 871.0
 margin_bottom = 361.0
 custom_fonts/font = ExtResource( 6 )
 text = "Play as the Coronavirus and infect the world!"
@@ -115,15 +117,32 @@ __meta__ = {
 }
 
 [node name="Label4" type="Label" parent="."]
-margin_left = 315.0
+margin_left = 299.0
 margin_top = 450.0
-margin_right = 911.0
+margin_right = 895.0
 margin_bottom = 481.0
 custom_fonts/font = ExtResource( 6 )
 text = "See how many balls you've used for each level!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="SoundControl" type="Button" parent="."]
+margin_left = 810.0
+margin_top = 600.0
+margin_right = 938.0
+margin_bottom = 620.0
+text = "TURN SOUND OFF"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+volume_db = 15.0
+autoplay = true
 [connection signal="pressed" from="PlayClassic" to="PlayClassic" method="_on_PlayClassic_pressed"]
 [connection signal="pressed" from="PlayNew" to="PlayNew" method="_on_PlayNew_pressed"]
 [connection signal="pressed" from="ScoreBoard" to="ScoreBoard" method="_on_ScoreBoard_pressed"]
+[connection signal="pressed" from="SoundControl" to="SoundControl" method="_on_SoundControl_pressed"]

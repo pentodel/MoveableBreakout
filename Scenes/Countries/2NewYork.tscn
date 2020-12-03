@@ -6,7 +6,7 @@
 [ext_resource path="res://Fonts/MisprojectSmall.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Sprites/splatter darker.PNG" type="Texture" id=5]
 [ext_resource path="res://Sprites/paddle.png" type="Texture" id=6]
-[ext_resource path="res://Sound/Background_Music.wav" type="AudioStream" id=7]
+[ext_resource path="res://Sound/covidmusic.wav" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 50, 5.01563 )
@@ -229,5 +229,6 @@ __meta__ = {
 
 [node name="background_music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 7 )
+volume_db = 15.0
 autoplay = true
 attenuation = 0.5
